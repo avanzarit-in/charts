@@ -39,16 +39,16 @@ class App extends Component {
   render() {
 
     return (
-      <Grid columns='equal'>
+      <Grid stackable columns='equal'>
         <Grid.Row >
           <Grid.Column>
             <Segment><ComboChart data={this.sms_rejections_data} title="SMS Rejections (%)" /></Segment>
             <Segment><ComboChart data={this.bloom_mill_rejections_data} title="Bloom Mill Rejections (%)" /></Segment>
             <Segment><ComboChart data={this.sms_rejections_data} title="Bar Mill Rejections (%)" /></Segment>
-            <Segment><ComboChart data={this.sms_rejections_data} title="Customer Complaints (%)" /></Segment>
           </Grid.Column>
 
           <Grid.Column>
+          <Segment><ComboChart data={this.sms_rejections_data} title="Customer Complaints (%)" /></Segment>
             <Segment><ComboChart data={this.sms_rejections_data} title="WRM Rejections (%)" /></Segment>
             <Segment><PiChart /></Segment>
           </Grid.Column>

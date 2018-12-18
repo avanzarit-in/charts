@@ -18,15 +18,15 @@ export default class PiChart extends Component{
         // Define the chart to be drawn.
       var data = new window.google.visualization.DataTable();
 
-      var options = {'title':'How Much Pizza I Ate Last Night'};
+      var options = {'title':'Rejection Breakup Oct\'18'};
 
 
       data.addColumn('string', 'Element');
       data.addColumn('number', 'Percentage');
       data.addRows([
-        ['Nitrogen', 0.78],
-        ['Oxygen', 0.21],
-        ['Other', 0.01]
+        ['Entrap', 0.12],
+        ['Others', 0.65],
+        ['Flakes', 0.20]
       ]);
 
       // Instantiate and draw the chart.
