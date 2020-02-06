@@ -4,6 +4,8 @@ import './App.css';
 import PiChart from './component/PiChart';
 import TableChart from './component/TableChart';
 import ComboChart from './component/ComboChart';
+import DiffChart from './component/DiffChart';
+import MaretialBarChart from './component/MaterialBarChart'
 import { Grid, Segment } from 'semantic-ui-react'
 
 class App extends Component {
@@ -72,6 +74,17 @@ class App extends Component {
           <Segment><ComboChart data={this.sms_rejections_data} title="Customer Complaints (%)" /></Segment>
             <Segment><ComboChart data={this.sms_rejections_data} title="WRM Rejections (%)" /></Segment>
             <Segment><PiChart /></Segment>
+          </Grid.Column>
+
+          
+        </Grid.Row>
+        <Grid.Row>
+        <Grid.Column>
+          <Segment><DiffChart /></Segment>
+          </Grid.Column>
+          <Grid.Column>
+           <Segment><MaretialBarChart/></Segment>
+          
           </Grid.Column>
         </Grid.Row>
 
