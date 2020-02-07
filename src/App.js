@@ -63,7 +63,7 @@ class App extends Component {
 
     return (
       <Grid stackable columns='equal'>
-        <Grid.Row >
+  {/*      <Grid.Row >
           <Grid.Column>
             <Segment><ComboChart data={this.sms_rejections_data} title="SMS Rejections (%)" /></Segment>
             <Segment><ComboChart data={this.bloom_mill_rejections_data} title="Bloom Mill Rejections (%)" /></Segment>
@@ -76,15 +76,15 @@ class App extends Component {
             <Segment><PiChart /></Segment>
           </Grid.Column>
    
-       </Grid.Row> 
+       </Grid.Row>  */}
         <Grid.Row>
         <Grid.Column>
           <Segment><DiffChart /></Segment>
           </Grid.Column>
-          <Grid.Column>
+    {/*      <Grid.Column>
            <Segment><MaretialBarChart/></Segment>
           
-          </Grid.Column>
+          </Grid.Column> */}
         </Grid.Row>
 
       </Grid>

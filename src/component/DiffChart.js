@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import $ from 'jquery';
 export default class DiffChart extends Component {
 
     constructor(props) {
@@ -24,33 +24,66 @@ export default class DiffChart extends Component {
 
     drawChart = () => {
         // Define the chart to be drawn.
-        var oldData = window.google.visualization.arrayToDataTable([
-            ['Month', 'Figure'],
-            ['Cesar', 250],
-            ['Rachel', 4200],
-            ['Patrick', 2900],
-            ['Eric', 8200]
-          ]);
-      
-          var newData = window.google.visualization.arrayToDataTable([
-            ['Month', 'Figure'],
-            ['Cesar', 370],
-            ['Rachel', 600],
-            ['Patrick', 700],
-            ['Eric', 1500]
-          ]);
+        var planData = window.google.visualization.arrayToDataTable([
+            ['Month', 'Production'],
+            ['APR', 28500],
+            ['MAY', 28500],
+            ['JUN', 15500],
+            ['JUL', 20500],
+            ['AUG', 23000],
+            ['SEP', 17500],
+            ['OCT', 26000],
+            ['NOV', 26000],
+            ['DEC', 31000],
+            ['JAN', 0],
+            ['FEB', 0],
+            ['MAR', 0]
 
-        var options = { 'title': 'Diff Chart' };
-      
+        ]);
 
-        // Instantiate and draw the chart.
-        var barChartDiff = new window.google.visualization.BarChart(this.diffChartRef.current);
+        var actualData = window.google.visualization.arrayToDataTable([
+            ['Month', 'Production'],
+            ['APR', 17718],
+            ['MAY', 21843],
+            ['JUN', 10994],
+            ['JUL', 19876],
+            ['AUG', 18905],
+            ['SEP', 16377],
+            ['OCT', 24418],
+            ['NOV', 18029],
+            ['DEC', 3320],
+            ['JAN', 0],
+            ['FEB', 0],
+            ['MAR', 0]
+
+        ]);
+
+        var options = {
+            'title': 'Annual Production Report - DAP', legend: { position: 'bottom' }, diff: {
+                oldData: {
+                    opacity: 1, color: '#eeeeee', tooltip: {
+                        prefix: 'Planned'
+                    }
+                },
+                newData: {
+                    opacity: 1, tooltip: {
+                        prefix: 'Actual'
+                    }
+                }
+            }
+        };
+
         var colChartDiff = new window.google.visualization.ColumnChart(this.diffChartRef.current);
-        var diffData = barChartDiff.computeDiff(oldData, newData);
+
+
+        var diffData = colChartDiff.computeDiff(planData, actualData);
         colChartDiff.draw(diffData, options);
-    } 
+        $($('g > g text', $('svg', $(this.diffChartRef.current)))[0]).text("Actual");
+        $($('g > g text', $('svg', $(this.diffChartRef.current)))[1]).text("Planned");
+    }
 
     render() {
+
         return (
             <div ref={this.diffChartRef}></div>
 
