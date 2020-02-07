@@ -38,7 +38,7 @@ export default class ComboChart extends Component {
 
             vAxis: { title: 'Rejection (%)' },
             hAxis: { title: 'Month' },
-            seriesType: 'line',
+            seriesType: 'bars',
             series: { 1: { pointSize: 5, } },
 
         };

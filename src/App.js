@@ -22,7 +22,7 @@ class App extends Component {
     ['Month', 'Actual', null, 'Target'],
     ['domain', 'data', 'annotation', 'data', 'annotation'],
     ['string', 'number', 'number', 'number', 'number'],
-    ['April', 0.62, 0.62, 0.35, 0.35],
+    ['April', 0.62, 0.62, 0.78, 0.35],
     ['May', 0.45, 0.45, 0.35, null],
     ['June', 0.44, 0.44, 0.35, null],
     ['July', 0.71, 0.71, 0.35, null],
@@ -75,9 +75,8 @@ class App extends Component {
             <Segment><ComboChart data={this.sms_rejections_data} title="WRM Rejections (%)" /></Segment>
             <Segment><PiChart /></Segment>
           </Grid.Column>
-
-          
-        </Grid.Row>
+   
+       </Grid.Row> 
         <Grid.Row>
         <Grid.Column>
           <Segment><DiffChart /></Segment>
